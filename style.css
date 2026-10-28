@@ -1,0 +1,3323 @@
+/* =========================
+   BASE
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+
+  color: #2c2c25;
+
+  font-family:
+    "Times New Roman",
+    "Yu Mincho",
+    "Hiragino Mincho ProN",
+    serif;
+
+  /* 背景画像を少し薄くする */
+  background-image:
+    linear-gradient(
+      rgba(248, 247, 242, 0.35),
+      rgba(248, 247, 242, 0.35)
+    ),
+    url("../images/top/zen..png");
+
+  background-size: 100% auto;
+  background-position: top center;
+  background-repeat: repeat-y;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+  width: 100%;
+  height: 110px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 72px;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  z-index: 20;
+}
+
+.header-logo {
+  font-size: 52px;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+
+  margin-left: 105px;
+}
+
+.header-nav a {
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  transition: opacity 0.3s ease;
+}
+
+.header-nav a:hover {
+  opacity: 0.55;
+}
+
+
+/* =========================
+   MENU BUTTON
+========================= */
+
+.menu-btn {
+  width: 76px;
+  height: 76px;
+
+  border-radius: 50%;
+
+  background: rgba(52, 59, 43, 0.95);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  margin-left: auto;
+  cursor: pointer;
+  position: relative;
+  z-index: 30;
+}
+
+.menu-btn span {
+  display: block;
+
+  width: 28px;
+  height: 1px;
+
+  background: #f5f0e4;
+
+  transition: 0.3s ease;
+}
+
+.menu-btn.is-open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.menu-btn.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-btn.is-open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.menu-btn:focus {
+  outline: none;
+}
+
+.menu-btn:focus-visible {
+  outline: 2px solid #8f967d;
+  outline-offset: 3px;
+}
+
+
+/* =========================
+   VIEW WORKS ボタン
+========================= */
+.btn-text {
+  font-size: 20px;
+  white-space: nowrap;
+}
+
+
+.more-btn {
+  width: 350px;
+  height: 82px;
+
+  padding: 0 42px 0 48px;
+
+  border: 1px solid #43443c;
+  border-radius: 999px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-size: 20px;
+  letter-spacing: 0.08em;
+}
+
+/* マウスを乗せた時 */
+.more-btn:hover {
+  background-color: #3f4937;
+  color: #f8f4e9;
+  border-color: #3f4937;
+}
+
+/* 長い矢印 */
+
+.btn-arrow {
+  position: relative;
+
+  width: 70px;
+  height: 1px;
+
+  background-color: #2c2c25;
+
+  flex-shrink: 0;
+}
+
+.btn-arrow::after {
+  content: "";
+
+  position: absolute;
+
+  right: 0;
+  top: -4px;
+
+  width: 9px;
+  height: 9px;
+
+  border-top: 1px solid #2c2c25;
+  border-right: 1px solid #2c2c25;
+
+  transform: rotate(45deg);
+}
+
+/* 矢印も白にする */
+.more-btn:hover .btn-arrow {
+  background-color: #f8f4e9;
+}
+
+.more-btn:hover .btn-arrow::after {
+  border-color: #f8f4e9;
+}
+
+
+/* 実際にクリックしている瞬間 */
+.more-btn:active {
+  background-color: #2f3829;
+  transform: scale(0.98);
+}
+
+
+
+
+/* =========================
+   FIRST VIEW
+========================= */
+
+.fv {
+  width: 100%;
+  min-height: 900px;
+
+  position: relative;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  overflow: hidden;
+}
+
+.fv-inner {
+  width: 100%;
+  min-height: 900px;
+
+  position: relative;
+
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+
+/* =========================
+   FIRST VIEW TEXT
+========================= */
+
+.fv-text {
+  position: absolute;
+
+  top: 180px;
+  left: 120px;
+
+  z-index: 5;
+}
+
+.fv-catch {
+  margin: 0 0 28px;
+
+  font-size: 30px;
+  line-height: 1.8;
+  letter-spacing: 0.08em;
+}
+
+.fv-name {
+  margin: 0 0 26px;
+
+  font-size: 76px;
+  line-height: 0.90;
+  letter-spacing: 0.11em;
+
+  font-weight: 400;
+}
+
+.fv-description {
+  margin: 0 0 34px;
+
+  font-size: 30px;
+  line-height: 1.9;
+  letter-spacing: 0.08em;
+}
+
+
+
+/* =========================
+   HERO IMAGE
+========================= */
+
+.fv-image {
+  position: absolute;
+
+  top: 30px;
+  right: -20px;
+
+  width: 700px;
+  height: 840px;
+
+  z-index: 2;
+}
+
+.fv-image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+  object-position: top right;
+}
+
+
+
+/* =========================
+   SCROLL
+========================= */
+
+.scroll {
+  position: absolute;
+
+  left: 650px;
+  bottom: 95px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+
+  z-index: 5;
+}
+
+.scroll span {
+  font-size: 11px;
+  letter-spacing: 0.24em;
+}
+
+.scroll-line {
+  width: 80px;
+  height: 1px;
+
+  background: #333;
+
+  position: relative;
+}
+
+.scroll-line::after {
+  content: "";
+
+  position: absolute;
+
+  top: -3px;
+  right: 0;
+
+  width: 7px;
+  height: 7px;
+
+  border-top: 1px solid #333;
+  border-right: 1px solid #333;
+
+  transform: rotate(45deg);
+}
+
+/* =========================
+   OPEN MENU
+========================= */
+
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+
+  width: 100%;
+  height: 100vh;
+
+  background: #3f4937;
+
+  z-index: 15;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: 0.4s ease;
+}
+
+.menu-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/* メニュー */
+
+.menu-nav {
+  display: flex;
+  flex-direction: column;
+
+  gap: 28px;
+
+  text-align: center;
+}
+
+.menu-nav a {
+  color: #f8f4e9;
+
+  font-family: "Times New Roman", serif;
+
+  font-size: 42px;
+  letter-spacing: 0.12em;
+
+  transition: opacity 0.3s;
+}
+
+.menu-nav a:hover {
+  opacity: 0.5;
+}
+
+
+/* 下の名前 */
+
+.menu-name {
+  position: absolute;
+
+  bottom: 45px;
+  left: 60px;
+
+  margin: 0;
+
+  color: rgba(248, 244, 233, 0.65);
+
+  font-size: 13px;
+  letter-spacing: 0.18em;
+}
+.menu-btn {
+  position: relative;
+  z-index: 30;
+}
+
+.menu-btn span {
+  transition: 0.3s ease;
+}
+
+.menu-btn.is-open span:first-child {
+  transform: translateY(5.5px) rotate(45deg);
+}
+
+.menu-btn.is-open span:last-child {
+  transform: translateY(-5.5px) rotate(-45deg);
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+/* ========================================
+   ABOUT
+======================================== */
+
+.about {
+  position: relative;
+  padding: 120px 0 140px;
+  background: transparent;
+}
+
+.about-inner {
+  width: min(1250px, calc(100% - 120px));
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 52% 48%;
+  align-items: center;
+  gap: 30px;
+}
+
+
+
+/* 左側 */
+.about-text-area {
+  width: 100%;
+}
+
+.about-description {
+  max-width: 650px;
+  margin: 0;
+
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.05em;
+}
+
+.about {
+  position: relative;
+  padding: 120px 0 140px;
+  background: transparent;
+}
+
+.about-inner {
+  width: min(1250px, calc(100% - 120px));
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 52% 48%;
+  align-items: center;
+  gap: 30px;
+}
+
+.about-text-area {
+  width: 100%;
+}
+
+.about-copy {
+  margin: 55px 0 35px;
+  font-size: 30px;
+  line-height: 1.8;
+  letter-spacing: 0.08em;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.about-description {
+  max-width: 650px;
+  margin: 0;
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.05em;
+}
+
+.about-visual {
+  position: relative;
+
+  width: 560px;
+  height: 540px;
+
+  flex-shrink: 0;
+}
+
+
+/* 大きい写真 */
+.about-main-photo {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 500px;
+  height: 600px;
+
+  z-index: 1;
+}
+
+.about-main-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+
+/* 小さい写真 */
+.about-sub-photo {
+  position: absolute;
+
+  top: 225px;
+  left: 300px;   /* ← ここを左に入れて、重なりを強くする */
+
+  width: 350px;
+  height: 420px;
+
+  z-index: 2;
+}
+
+.about-sub-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+
+.section-title h2 {
+  margin: 0;
+
+  font-family: "Times New Roman", serif;
+  font-size: 48px;
+  font-weight: 400;
+
+  letter-spacing: 0.08em;
+  line-height: 1;
+}
+
+.section-title p {
+  margin: 8px 0 0;
+
+  font-size: 18px;
+  letter-spacing: 0.12em;
+}
+
+.about-text h3 {
+  margin: 55px 0 32px;
+
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+
+  font-size: 30px;
+  font-weight: 400;
+
+  line-height: 1.8;
+  letter-spacing: 0.12em;
+}
+
+.about-description {
+  margin: 0 0 38px;
+
+  font-size: 22px;
+  line-height: 2.1;
+  letter-spacing: 0.06em;
+}
+
+
+/* =========================
+   ABOUT IMAGE AREA
+========================= */
+
+.about-images {
+  position: relative;
+
+  width: 520px;
+  height: 550px;
+
+  flex-shrink: 0;
+}
+
+
+/* 大きい窓型 */
+
+.about-image-main {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 315px;
+  height: 420px;
+
+  overflow: hidden;
+
+  border-radius: 160px 160px 0 0;
+}
+
+.about-image-main img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+
+/* 右下の小さい写真 */
+
+.about-image-sub {
+  position: absolute;
+
+  right: 20px;
+  bottom: 25px;
+
+  width: 220px;
+  height: 280px;
+
+  overflow: hidden;
+
+  border-radius: 110px 110px 0 0;
+
+  z-index: 2;
+}
+
+.about-image-sub img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+/* ========================================
+   SKILL
+======================================== */
+
+.skill {
+  position: relative;
+
+  width: 100%;
+  min-height: 564px;
+
+  padding: 95px 0 110px;
+
+  /* bodyの植物背景をそのまま見せる */
+  background: transparent;
+}
+
+
+/* 中央幅 */
+
+.skill-inner {
+  width: min(1250px, calc(100% - 120px));
+  margin: 0 auto;
+}
+
+
+/* ========================================
+   TITLE
+======================================== */
+/* =========================
+   SKILLS 見出し
+========================= */
+
+.skill-heading {
+  text-align: left;
+  margin-bottom: 65px;
+}
+
+.skill-heading .section-title h2 {
+  margin: 0;
+
+  font-family: "Times New Roman", serif;
+  font-size: 48px;
+  font-weight: 400;
+
+  line-height: 1;
+  letter-spacing: 0.08em;
+}
+
+.skill-heading .section-title p {
+  margin: 12px 0 0;
+
+  font-size: 18px;
+  letter-spacing: 0.12em;
+
+  color: #35342d;
+}
+
+
+/* ABOUTのキャッチコピーと同じ雰囲気 */
+
+
+.skill-heading {
+  text-align: center;
+}
+
+.skill-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 24px;
+}
+
+.skill-title-row h2 {
+  margin: 0;
+
+  font-family: "Times New Roman", serif;
+
+  font-size: 30px;
+  font-weight: 400;
+
+  letter-spacing: 0.12em;
+}
+
+
+/* SKILLS横の線 */
+
+.skill-title-line {
+  display: block;
+
+  width: 75px;
+  height: 1px;
+
+  background-color: #34352f;
+}
+
+
+.skill-lead {
+  margin: 35px 0 0;
+
+  font-size: 17px;
+  letter-spacing: 0.12em;
+
+  line-height: 1.8;
+}
+
+
+/* ========================================
+   CARD LIST
+======================================== */
+
+.skill-list {
+  margin-top: 60px;
+
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 32px;
+}
+
+.skill-card {
+  width: 210px;
+  min-height: 220px;
+
+  padding: 28px 22px 24px;
+
+  background: rgba(247, 243, 231, 0.92);
+  border: 1px solid rgba(120, 110, 85, 0.08);
+  border-radius: 24px;
+
+  box-shadow: 0 8px 18px rgba(72, 65, 50, 0.10);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+}
+
+.skill-figure {
+  width: 88px;
+  height: 88px;
+
+  margin-bottom: 22px;
+
+  border: 1px solid rgba(90, 82, 63, 0.16);
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.35);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+}
+
+.skill-figure span {
+  font-family: "Times New Roman", serif;
+  font-size: 28px;
+  color: #3a392f;
+  letter-spacing: 0.05em;
+}
+
+
+/* Figma */
+.figma-figure {
+  width: 88px;
+  height: 88px;
+
+  border: 1px solid rgba(90, 82, 63, 0.16);
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.3);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.figma-figure span {
+  font-size: 28px;
+  color: #3a392f;
+}
+
+
+/* HTML/CSS */
+.html-figure {
+  border-radius: 24px;
+}
+
+/* JS */
+.js-figure {
+  border-radius: 18px;
+}
+
+.js-figure::after {
+  content: "";
+  position: absolute;
+  width: 34px;
+  height: 1px;
+  bottom: 18px;
+  background: rgba(90, 82, 63, 0.20);
+}
+
+/* WordPress */
+.wp-figure::before {
+  content: "";
+  position: absolute;
+  width: 54px;
+  height: 54px;
+  border: 1px solid rgba(90, 82, 63, 0.16);
+  border-radius: 50%;
+}
+
+.skill-card h3 {
+  margin: 0 0 14px;
+
+  font-family: "Times New Roman", serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #34342d;
+  letter-spacing: 0.03em;
+}
+
+.skill-card p {
+  margin: 0;
+
+  font-size: 13px;
+  line-height: 1.9;
+  letter-spacing: 0.04em;
+  color: #4d4a40;
+}
+
+/* ========================================
+   WORKS
+======================================== */
+
+/* ==================================================
+   WORKS SLIDER - RESET & FINAL
+================================================== */
+/* ==================================================
+   WORKS 最終調整
+================================================== */
+
+.pf-works {
+  position: relative;
+  width: 100%;
+  min-height: 900px;
+  padding: 90px 0 110px;
+  overflow: hidden;
+}
+
+
+/* =========================
+   タイトル
+========================= */
+
+.pf-works-heading {
+  width: min(1200px, calc(100% - 120px));
+  margin: 0 auto;
+}
+
+.pf-works-heading h2 {
+  margin: 0;
+
+  font-family: "Times New Roman", serif;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.08em;
+
+  color: #25271f;
+}
+
+.pf-works-heading p {
+  margin: 16px 0 0;
+
+  font-size: 18px;
+  letter-spacing: 0.16em;
+
+  color: #25271f;
+}
+
+
+/* つくったもの、いろいろ。 */
+
+.pf-works-copy {
+  width: min(1200px, calc(100% - 120px));
+  margin: 55px auto 0;
+
+  font-size: 23px;
+  letter-spacing: 0.16em;
+
+  color: #25271f;
+}
+
+
+/* =========================
+   スライダー全体
+========================= */
+
+/* =========================
+   WORKS SLIDER
+========================= */
+
+/* ========================================
+   WORKS SLIDER
+======================================== */
+
+.works-showcase {
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  height: 500px;
+  margin: 45px auto 0;
+  overflow: hidden;
+}
+
+
+/* スライダー本体 */
+.works-showcase-stage {
+  position: relative;
+  width: 100%;
+  height: 440px;
+}
+
+
+/* ========================================
+   全作品共通
+======================================== */
+
+.works-showcase-item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 500px;
+
+  display: block;
+  color: #25251f;
+  text-decoration: none;
+
+  opacity: 0;
+  pointer-events: none;
+
+  transform: translate(-50%, -50%) scale(.88);
+
+  transition:
+    transform .65s cubic-bezier(.22, .61, .36, 1),
+    left .65s cubic-bezier(.22, .61, .36, 1),
+    opacity .65s ease;
+
+  z-index: 1;
+}
+
+
+/* ========================================
+   画像
+======================================== */
+
+.works-showcase-item img {
+  display: block;
+
+  width: 100%;
+  height: 300px;
+
+  object-fit: cover;
+
+  border-radius: 24px;
+}
+
+
+/* ========================================
+   中央
+======================================== */
+
+.works-showcase-item.is-active {
+  left: 50%;
+
+  width: 760px;
+
+  opacity: 1;
+  pointer-events: auto;
+
+  transform:
+    translate(-50%, -50%)
+    scale(1);
+
+  z-index: 5;
+}
+
+.works-showcase-item.is-active img {
+  height: 360px;
+}
+
+
+/* ========================================
+   左
+======================================== */
+
+.works-showcase-item.is-prev {
+  left: calc(50% - 480px);
+
+  opacity: .58;
+
+  transform:
+    translate(-50%, -50%)
+    scale(.92);
+
+  z-index: 2;
+}
+
+
+/* ========================================
+   右
+======================================== */
+
+.works-showcase-item.is-next {
+  left: calc(50% + 480px);
+
+  opacity: .58;
+
+  transform:
+    translate(-50%, -50%)
+    scale(.92);
+
+  z-index: 2;
+}
+
+
+/* ========================================
+   作品タイトル
+======================================== */
+
+.works-showcase-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 18px;
+
+  margin-top: 20px;
+
+  font-family: "Times New Roman", serif;
+  white-space: nowrap;
+}
+
+
+.works-showcase-number {
+  font-size: 30px;
+  line-height: 1;
+}
+
+
+.works-showcase-line {
+  width: 55px;
+  height: 1px;
+
+  background-color: #777;
+}
+
+
+.works-showcase-name {
+  font-size: 20px;
+}
+
+
+/* 左右作品の文字は少し小さく */
+
+.works-showcase-item.is-prev .works-showcase-number,
+.works-showcase-item.is-next .works-showcase-number {
+  font-size: 23px;
+}
+
+.works-showcase-item.is-prev .works-showcase-name,
+.works-showcase-item.is-next .works-showcase-name {
+  font-size: 16px;
+}
+
+
+/* ========================================
+   矢印
+======================================== */
+
+.works-nav {
+  position: absolute;
+  top: 195px;
+
+  width: 58px;
+  height: 58px;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 50%;
+
+  background-color: #34452f;
+
+  cursor: pointer;
+
+  z-index: 20;
+
+  transition:
+    transform .25s ease,
+    background-color .25s ease;
+}
+
+
+.works-nav:hover {
+  transform: scale(1.08);
+}
+
+
+/* 左矢印 */
+
+.works-nav-prev {
+  left: calc(50% - 425px);
+}
+
+
+/* 右矢印 */
+
+.works-nav-next {
+  right: calc(50% - 425px);
+}
+
+
+/* 矢印本体 */
+
+.works-nav::before {
+  content: "";
+
+  position: absolute;
+  top: 50%;
+
+  width: 12px;
+  height: 12px;
+
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+}
+
+
+/* ← */
+
+.works-nav-prev::before {
+  left: 52%;
+
+  transform:
+    translate(-50%, -50%)
+    rotate(-135deg);
+}
+
+
+/* → */
+
+.works-nav-next::before {
+  left: 47%;
+
+  transform:
+    translate(-50%, -50%)
+    rotate(45deg);
+}
+
+
+/* ========================================
+   DOTS
+======================================== */
+
+.pf-dots {
+  width: 620px;
+
+  margin: 5px auto 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 15px;
+}
+
+
+/* 左右の線 */
+
+.pf-dots::before,
+.pf-dots::after {
+  content: "";
+
+  display: block;
+
+  width: 150px;
+  height: 1px;
+
+  background-color: rgba(60, 60, 50, .4);
+}
+
+
+.pf-dots::before {
+  margin-right: 25px;
+}
+
+.pf-dots::after {
+  margin-left: 25px;
+}
+
+
+/* ドット */
+
+.pf-dot {
+  width: 10px;
+  height: 10px;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 50%;
+
+  background-color: #d4d5d2;
+
+  cursor: pointer;
+
+  transition:
+    background-color .3s ease,
+    transform .3s ease;
+}
+
+
+.pf-dot.is-active {
+  background-color: #28533f;
+
+  transform: scale(1.15);
+}
+
+
+/* ========================================
+   VIEW WORKS
+======================================== */
+
+.pf-view-btn {
+  width: 280px;
+  height: 58px;
+
+  margin: 35px auto 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 30px;
+
+  border-radius: 999px;
+
+  background-color: #28533f;
+
+  color: #fff;
+  text-decoration: none;
+
+  font-family: "Times New Roman", serif;
+  font-size: 17px;
+  letter-spacing: .08em;
+
+  transition:
+    transform .3s ease,
+    opacity .3s ease;
+}
+
+
+.pf-view-btn:hover {
+  transform: translateY(-3px);
+  opacity: .9;
+}
+
+
+/* VIEW WORKS の線 */
+
+.pf-view-arrow {
+  position: relative;
+
+  display: block;
+
+  width: 55px;
+  height: 1px;
+
+  background-color: #fff;
+}
+
+
+/* VIEW WORKS の矢印先端 */
+
+.pf-view-arrow::after {
+  content: "";
+
+  position: absolute;
+  right: 0;
+  top: -4px;
+
+  width: 8px;
+  height: 8px;
+
+  border-top: 1px solid #fff;
+  border-right: 1px solid #fff;
+
+  transform: rotate(45deg);
+}
+
+/* =========================
+   SERVICE
+========================= */
+
+.service {
+  position: relative;
+  padding: 100px 0 130px;
+}
+
+.service-inner {
+  width: min(1400px, calc(100% - 120px));
+  margin: 0 auto;
+}
+
+
+/* タイトル */
+.service-heading {
+  margin-left: 70px;
+}
+
+.service-heading .section-title h2 {
+  margin: 0;
+
+  font-size: 48px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+}
+
+.service-heading .section-title p {
+  margin-top: 10px;
+
+  font-size: 18px;
+  letter-spacing: 0.12em;
+}
+
+
+/* =========================
+   3つのカード
+========================= */
+
+.service-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 38px;
+}
+
+
+/* カード */
+.service-item {
+  position: relative;
+
+  min-height: 530px;
+
+  padding:
+    55px
+    45px
+    45px;
+
+  border-radius: 22px;
+
+  background:
+    rgba(248, 247, 242, 0.82);
+
+  box-shadow:
+    5px 6px 10px
+    rgba(0, 0, 0, 0.18);
+
+  text-align: center;
+}
+
+
+/* =========================
+   番号
+========================= */
+
+.service-item::before {
+  position: absolute;
+
+  top: 22px;
+  left: 25px;
+
+  font-family:
+    "Times New Roman",
+    serif;
+
+  font-size: 32px;
+}
+
+
+/* 01 */
+.service-item:nth-child(1)::before {
+  content: "01";
+}
+
+/* 02 */
+.service-item:nth-child(2)::before {
+  content: "02";
+}
+
+/* 03 */
+.service-item:nth-child(3)::before {
+  content: "03";
+}
+
+
+/* 番号下の斜め線 */
+.service-item::after {
+  content: "";
+
+  position: absolute;
+
+  top: 82px;
+  left: 40px;
+
+  width: 38px;
+  height: 1px;
+
+  background: #222;
+
+  transform: rotate(-60deg);
+}
+
+
+/* =========================
+   画像
+========================= */
+
+.service-image {
+  width: 100%;
+  height: 240px;
+
+  margin-bottom: 28px;
+
+  overflow: hidden;
+}
+
+.service-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+}
+
+
+/* 今HTMLにあるアイコンは非表示 */
+.service-icon {
+  display: none;
+}
+
+
+/* =========================
+   タイトル
+========================= */
+
+.service-item h3 {
+  position: relative;
+
+  margin:
+    0
+    0
+    42px;
+
+  font-family:
+    "Times New Roman",
+    serif;
+
+  font-size: 30px;
+  font-weight: 400;
+
+  letter-spacing: 0.04em;
+}
+
+
+/* タイトル下の線 */
+.service-item h3::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: -20px;
+
+  width: 45px;
+  height: 1px;
+
+  background: #333;
+
+  transform: translateX(-50%);
+}
+
+
+/* =========================
+   説明
+========================= */
+
+.service-item p {
+  margin: 0;
+
+  font-size: 17px;
+  line-height: 2;
+
+  letter-spacing: 0.06em;
+
+  text-align: left;
+}
+
+/* =========================
+   SERVICE サイズ調整
+========================= */
+
+/* 3枚全体 */
+.service-list {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 35px;
+
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+
+/* カードを小さく＋窓型 */
+.service-item {
+  width: 280px;
+  min-height: 460px;
+
+  padding: 35px 28px 35px;
+
+  /* ★窓みたいな形 */
+  border-radius: 140px 140px 25px 25px;
+
+  background: rgba(248, 247, 242, 0.82);
+}
+
+
+/* 01・02・03 */
+.service-item::before {
+  top: 28px;
+  left: 32px;
+
+  font-size: 27px;
+}
+
+
+/* 斜め線 */
+.service-item::after {
+  top: 72px;
+  left: 47px;
+
+  width: 30px;
+}
+
+
+/* 写真を小さく */
+.service-image {
+  width: 180px;
+  height: 170px;
+
+  margin: 65px auto 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* 写真 */
+.service-image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+}
+
+
+/* タイトル */
+.service-item h3 {
+  margin: 10px 0 30px;
+
+  font-size: 24px;
+}
+
+
+/* 説明 */
+.service-item p {
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+/* =========================
+   SERVICE 数字・斜め線を消す
+========================= */
+
+/* 01・02・03を消す */
+.service-item::before {
+  display: none;
+}
+
+/* 数字下の斜め線を消す */
+.service-item::after {
+  display: none;
+}
+
+
+/* =========================
+   写真だけ上に配置
+========================= */
+
+.service-item {
+  width: 340px;
+  height: 430px;
+
+  flex-shrink: 0;
+
+  /* 横広めの窓型 */
+  border-radius: 170px 170px 24px 24px;
+}
+
+.service-image {
+  width: 210px;
+  height: 150px;
+
+  margin: 80px auto 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.service-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* =====================================
+   CONTACT レイアウト修正版
+===================================== */
+
+/* =========================
+   CONTACT PC
+========================= */
+
+.contact {
+  width: 100%;
+  padding: 150px 0;
+  box-sizing: border-box;
+}
+
+.contact-inner {
+  width: 1200px;
+  max-width: calc(100% - 100px);
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 80px;
+}
+
+
+/* =========================
+   左側
+========================= */
+
+.contact-left {
+  width: 430px;
+  flex-shrink: 0;
+}
+
+.contact-heading {
+  margin: 0;
+}
+
+.contact-title-row {
+  display: block;
+}
+
+.contact-title-row h2 {
+  margin: 0;
+
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.08em;
+}
+
+/* CONTACT横の線なし */
+.contact-title-row > span {
+  display: none;
+}
+
+.contact-subtitle {
+  margin: 20px 0 0;
+
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.contact-description {
+  margin: 80px 0 0 40px;
+
+  font-size: 18px;
+  line-height: 2.2;
+}
+
+
+/* =========================
+   右側フォーム
+========================= */
+
+.contact-form-area {
+  width: 620px;
+  flex-shrink: 0;
+
+  padding: 55px 60px;
+
+  box-sizing: border-box;
+
+  background: rgba(250, 249, 246, 0.92);
+
+  border-radius: 45px;
+}
+
+.contact-form {
+  width: 100%;
+}
+
+
+/* 項目 */
+.contact .form-group {
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.contact .form-group label {
+  display: block;
+
+  margin-bottom: 10px;
+
+  font-size: 16px;
+  text-align: left;
+}
+
+
+/* 入力欄 */
+.contact .form-group input,
+.contact .form-group textarea {
+  display: block;
+
+  width: 100%;
+  max-width: none;
+
+  box-sizing: border-box;
+
+  border: 1px solid #d5d5d2;
+  border-radius: 7px;
+
+  background: rgba(255,255,255,0.8);
+}
+
+
+/* 名前・メール */
+.contact .form-group input {
+  height: 52px;
+
+  padding: 0 15px;
+}
+
+
+/* お問い合わせ */
+.contact .form-group textarea {
+  height: 150px;
+
+  padding: 15px;
+
+  resize: none;
+}
+
+
+/* =========================
+   送信ボタン
+========================= */
+
+.contact-submit {
+  width: 280px;
+  height: 58px;
+
+  margin: 35px auto 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+  border: 0;
+  border-radius: 999px;
+
+  background: #b5bea3;
+
+  cursor: pointer;
+}
+
+.contact-submit-line {
+  display: block;
+
+  width: 45px;
+  height: 1px;
+
+  background: #333;
+}
+
+.contact-submit-arrow {
+  font-size: 20px;
+}
+
+
+/* =========================
+   WORKS 位置調整
+========================= */
+
+.pf-works {
+  position: relative;
+
+  /* 上下にしっかり余白 */
+  padding-top: 120px;
+  padding-bottom: 140px;
+}
+
+
+/* VIEW WORKSを右上へ */
+.pf-view-btn {
+  position: absolute;
+
+  top: 120px;
+  right: 100px;
+
+  margin: 0;
+
+  width: 250px;
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+
+  z-index: 10;
+}
+
+/* CONTACTフォームを横に広く＋少し下へ */
+.contact-form-area {
+  width: 760px !important;
+  max-width: none !important;
+  flex: 0 0 760px !important;
+
+  padding: 55px 70px !important;
+
+  /* 少し下に移動 */
+  transform: translateY(120px) !important;
+}
+
+/* 今ある線は消す */
+.contact-submit-line {
+  display: none !important;
+}
+
+/* 矢印を長い一本線にする */
+.contact-submit-arrow {
+  position: relative;
+  width: 90px;
+  height: 1px;
+  background: #333;
+  display: block;
+  margin-left: 15px;
+}
+
+/* 矢印の先端 */
+.contact-submit-arrow::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+
+  width: 10px;
+  height: 10px;
+
+  border-top: 1px solid #333;
+  border-right: 1px solid #333;
+
+  transform: translateY(-50%) rotate(45deg);
+}
+
+/* HTMLに書いてある → の文字を見えなくする */
+.contact-submit-arrow {
+  font-size: 0 !important;
+}
+
+
+/* =========================
+   WORKSボタン hover
+========================= */
+
+/* =========================
+   WORKSボタンをFVと統一
+========================= */
+
+.pf-view-btn {
+  width: 350px !important;
+  height: 82px !important;
+
+  padding: 0 42px 0 48px !important;
+  box-sizing: border-box;
+
+  border: 1px solid #43443c !important;
+  border-radius: 999px !important;
+
+  background: transparent !important;
+  color: #2c2c25 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+
+  text-decoration: none;
+}
+
+/* VIEW WORKSを絶対1行にする */
+.pf-view-btn > span:first-child {
+  font-size: 20px !important;
+  letter-spacing: 0.08em !important;
+  white-space: nowrap !important;
+  flex-shrink: 0;
+}
+
+
+/* 長い矢印 */
+.pf-view-arrow {
+  position: relative;
+
+  width: 70px !important;
+  height: 1px !important;
+
+  background-color: #2c2c25 !important;
+
+  flex-shrink: 0;
+}
+
+.pf-view-arrow::after {
+  content: "";
+
+  position: absolute;
+  right: 0;
+  top: -4px;
+
+  width: 9px;
+  height: 9px;
+
+  border-top: 1px solid #2c2c25;
+  border-right: 1px solid #2c2c25;
+
+  transform: rotate(45deg);
+}
+
+
+/* =========================
+   hover
+========================= */
+
+.pf-view-btn:hover {
+  background-color: #3f4937 !important;
+  border-color: #3f4937 !important;
+  color: #f8f4e9 !important;
+}
+
+.pf-view-btn:hover .pf-view-arrow {
+  background-color: #f8f4e9 !important;
+}
+
+.pf-view-btn:hover .pf-view-arrow::after {
+  border-color: #f8f4e9 !important;
+}
+
+
+/* クリック時 */
+.pf-view-btn:active {
+  background-color: #2f3829 !important;
+  transform: scale(0.98);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  width: 100%;
+  height: 100px;
+
+  background-color: #f1f0eb;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  padding: 0 70px;
+  box-sizing: border-box;
+}
+
+.footer-copy {
+  margin: 0;
+
+  font-family: "Times New Roman", serif;
+  font-size: 16px;
+  letter-spacing: 0.15em;
+
+  color: #222;
+}
+/* =========================
+   ハンバーガーメニュー
+========================= */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+
+  width: 36vw;
+  height: 100vh;
+
+  background: #3f4937;
+
+  transform: translateX(100%);
+  transition: transform 0.4s ease;
+
+  z-index: 1000;
+}
+
+.menu-overlay.is-open {
+  transform: translateX(0);
+}
+
+
+
+/* メニュー文字 */
+.menu-nav {
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  gap: 60px;
+
+  padding-left: 70px;
+  box-sizing: border-box;
+}
+
+
+.menu-nav a {
+  display: block;
+
+  font-family: "Times New Roman", serif;
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+
+  color: floralwhite;
+
+  text-decoration: none;
+}
+
+
+/* ホバー */
+.menu-nav a:hover {
+  opacity: 0.6;
+  transform: translateX(8px);
+}
+
+
+/* ハンバーガーボタンはメニューより前 */
+.menu-btn {
+  z-index: 30;
+}
+
+/* =========================
+   MENU CLOSE
+========================= */
+
+.menu-close {
+  position: absolute;
+  top: 45px;
+  right: 50px;
+
+  width: 50px;
+  height: 50px;
+
+  padding: 0;
+  border: none;
+  background: transparent;
+
+  cursor: pointer;
+
+  z-index: 50;
+}
+
+
+/* × の線 */
+.menu-close span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 36px;
+  height: 1px;
+
+  background: #f5f0e4;
+
+  transform-origin: center;
+
+  transition: 0.3s ease;
+}
+
+.menu-close span:first-child {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.menu-close span:last-child {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+
+/* ホバー */
+.menu-close:hover span {
+  width: 42px;
+}
+
+/* メニュー外クリック用 */
+.menu-backdrop {
+  position: fixed;
+  inset: 0;
+
+  z-index: 999;
+
+  background: transparent;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.menu-backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+
+/* メニューはbackdropより前 */
+.menu-overlay {
+  z-index: 1000 !important;
+}
+
+
+/* ×も押せるように */
+.menu-close {
+  z-index: 1001 !important;
+}
+
+
+/* ========================================
+   SP  390px
+======================================== */
+
+@media screen and (max-width: 767px) {
+
+  html,
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    margin: 0;
+
+    background-size: 100% auto;
+    background-position: top center;
+    background-repeat: repeat-y;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+
+
+  /* =========================
+     HEADER
+  ========================= */
+
+  .header {
+    position: relative;
+    width: 100%;
+    height: 70px;
+
+    padding: 15px 20px;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header-logo {
+    font-size: 40px;
+  }
+
+  .menu-btn {
+    width: 40px;
+    height: 40px;
+    gap: 4px;
+  }
+
+  .menu-btn span {
+    width: 16px;
+  }
+
+
+  /* =========================
+     FIRST VIEW
+  ========================= */
+
+  .fv {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+  }
+
+  .fv-inner {
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 0;
+    margin: 0;
+  }
+
+
+  /* =========================
+     文章
+  ========================= */
+
+  .fv-text {
+    position: static;
+
+    width: 100%;
+
+    padding: 45px 28px 50px;
+    margin: 0;
+
+    box-sizing: border-box;
+  }
+
+
+  /* 好きなもので〜 */
+  .fv-catch {
+    margin: 0 0 28px;
+
+    font-size: 16px;
+    line-height: 2;
+    letter-spacing: 0.1em;
+  }
+
+
+  /* SAAYA WATANABE */
+  .fv-name {
+    margin: 0 0 28px;
+
+    font-size: 42px;
+    line-height: 1.15;
+
+    font-weight: 400;
+    letter-spacing: 0.03em;
+  }
+
+
+  /* 想いを、カタチに。 */
+  .fv-description {
+    margin: 0;
+
+    font-size: 16px;
+    line-height: 2;
+    letter-spacing: 0.08em;
+  }
+
+
+  /* =========================
+     写真
+  ========================= */
+
+  .fv-image {
+    position: static;
+    width: 100%;
+    height: 380px;
+    overflow: hidden;
+
+    /* 左上・右下をゆるく曲線に */
+    border-radius: 120px 0 120px 0;
+  }
+
+  .fv-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+
+  /* PC用は一旦非表示 */
+  .fv .more-btn,
+  .fv .scroll {
+    display: none;
+  }
+
+
+  .fv .more-btn {
+    display: none !important;
+  }
+
+  /* =========================
+   ABOUT / SP
+========================= */
+
+  .about {
+    width: 100%;
+    padding: 80px 0 90px;
+  }
+
+  .about-inner {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 0 28px;
+    box-sizing: border-box;
+  }
+
+
+  /* -------------------------
+     タイトル・文章
+  ------------------------- */
+
+  .about-text-area {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .about .section-title {
+    margin: 0 0 35px;
+  }
+
+  .about .section-title h2 {
+    margin: 0 0 8px;
+
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+  }
+
+  .about .section-title p {
+    margin: 0;
+
+    font-size: 14px;
+    letter-spacing: 0.08em;
+  }
+
+
+  /* 「伝えたい」を〜 */
+  .about-copy {
+    margin: 0 0 28px;
+
+    font-size: 16px;
+    font-weight: 400;
+
+    line-height: 1.8;
+    letter-spacing: 0.08em;
+  }
+
+
+  /* 説明文 */
+  .about-description {
+    width: 100%;
+
+    margin: 0 0 45px;
+    padding: 0;
+
+    font-size: 16px;
+    line-height: 2;
+
+    letter-spacing: 0.06em;
+  }
+
+
+  /* -------------------------
+     最後に写真
+  ------------------------- */
+
+  .about-visual {
+    position: static;
+
+    width: 100%;
+    height: auto;
+
+    margin: 0;
+  }
+
+
+  /* メイン写真 */
+  .about-main-photo {
+    position: static;
+
+    width: 100%;
+    height: 430px;
+
+    margin: 0;
+
+    overflow: hidden;
+
+    /* アーチ型 */
+    border-radius: 180px 180px 25px 25px;
+  }
+
+  .about-main-photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+  }
+
+
+  /* スマホでは2枚目の写真は非表示 */
+  .about-sub-photo {
+    display: none;
+  }
+
+
+  /* =========================
+   SKILLS / SP
+========================= */
+
+  .skill {
+    width: 100%;
+    padding: 80px 20px 90px;
+    box-sizing: border-box;
+  }
+
+
+  /* タイトル */
+  .skill-heading {
+    width: 100%;
+    margin: 0 0 50px;
+    text-align: left;
+  }
+
+  .skill .section-title {
+    margin: 0;
+    text-align: left;
+  }
+
+  .skill .section-title h2 {
+    margin: 0 0 8px;
+
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+  }
+
+  .skill .section-title p {
+    margin: 0;
+
+    font-size: 14px;
+    letter-spacing: 0.08em;
+  }
+
+
+  /* =========================
+     4つのカード
+  ========================= */
+
+  .skill-list {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 18px;
+
+    margin: 0;
+    padding: 0;
+  }
+
+
+  .skill-card {
+    width: 100%;
+    min-width: 0;
+
+    padding: 28px 12px 30px;
+
+    box-sizing: border-box;
+
+    border-radius: 30px;
+
+    text-align: center;
+  }
+
+
+  /* 上のアイコン */
+  .skill-figure {
+    width: 90px;
+    height: 90px;
+
+    margin: 0 auto 22px;
+
+    border-radius: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  .skill-figure span {
+    font-size: 26px;
+  }
+
+
+  /* Figmaなど */
+  .skill-card h3 {
+    margin: 0 0 18px;
+
+    font-size: 18px;
+    line-height: 1.4;
+    font-weight: 400;
+  }
+
+
+  /* 説明 */
+  .skill-card p {
+    margin: 0;
+
+    font-size: 14px;
+    line-height: 1.8;
+
+    letter-spacing: 0.04em;
+  }
+
+  /* ========================================
+   WORKS / SP
+======================================== */
+
+  .pf-works {
+    width: 100%;
+    padding: 55px 30px 65px;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+
+  /* =========================
+     タイトル
+  ========================= */
+
+  .pf-works-heading {
+    position: static !important;
+    width: 100% !important;
+
+    margin: 0 0 28px !important;
+
+    text-align: center !important;
+    transform: none !important;
+  }
+
+  .pf-works-heading h2 {
+    margin: 0 0 10px !important;
+
+    font-size: 30px !important;
+    font-weight: 400 !important;
+
+    letter-spacing: 0.12em !important;
+  }
+
+  .pf-works-heading p {
+    margin: 0 !important;
+
+    font-size: 14px !important;
+    letter-spacing: 0.08em !important;
+  }
+
+
+  /* =========================
+     スライダー
+  ========================= */
+
+  .works-showcase {
+    position: relative !important;
+
+    width: 100% !important;
+    height: auto !important;
+
+    margin: 0 auto !important;
+  }
+
+  .works-showcase-stage {
+    position: relative !important;
+
+    width: 100% !important;
+    height: auto !important;
+
+    margin: 0 !important;
+  }
+
+
+  /* 他の作品は隠す */
+  .works-showcase-item {
+    display: none !important;
+
+    position: static !important;
+
+    width: 100% !important;
+    height: auto !important;
+
+    transform: none !important;
+  }
+
+
+  /* 現在の作品だけ表示 */
+  .works-showcase-item.is-active {
+    display: block !important;
+  }
+
+
+  /* 作品画像 */
+  .works-showcase-item img {
+    width: 100% !important;
+    height: 150px !important;
+
+    object-fit: cover !important;
+    object-position: top center !important;
+
+    border-radius: 22px !important;
+  }
+
+
+  /* =========================
+     01 ─ Web Design
+  ========================= */
+
+  .works-showcase-info {
+    position: static !important;
+
+    width: 100% !important;
+
+    margin: 15px 0 0 !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    gap: 13px !important;
+
+    transform: none !important;
+  }
+
+  .works-showcase-number {
+    font-size: 15px !important;
+  }
+
+  .works-showcase-line {
+    width: 30px !important;
+    height: 1px !important;
+
+    background: #777 !important;
+  }
+
+  .works-showcase-name {
+    font-size: 14px !important;
+    letter-spacing: 0.05em !important;
+  }
+
+
+  /* =========================
+     左右の丸矢印
+  ========================= */
+
+  
+
+  .works-nav {
+    display: flex !important;
+
+    /* 作品画像の中央あたり */
+    top: 75px !important;
+
+    z-index: 20 !important;
+
+    transform: translateY(-50%) scale(0.7) !important;
+  }
+
+   .works-showcase {
+    overflow: visible !important;
+  }
+
+  .works-showcase-stage {
+    overflow: visible !important;
+  }
+
+
+  .works-nav-prev {
+    left: -28px !important;
+  }
+
+  .works-nav-next {
+    right: -28px !important;
+  }
+
+
+
+
+  /* =========================
+     ドット
+  ========================= */
+
+  .pf-dots {
+    position: relative !important;
+
+    width: 180px !important;
+
+    margin: 30px auto 0 !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    gap: 12px !important;
+
+    transform: none !important;
+  }
+
+
+  /* 左右の細い線 */
+  .pf-dots::before,
+  .pf-dots::after {
+    content: "";
+
+    width: 32px;
+    height: 1px;
+
+    background: #999;
+  }
+
+
+  .pf-dot {
+    width: 7px !important;
+    height: 7px !important;
+
+    min-width: 7px !important;
+
+    padding: 0 !important;
+
+    border: none !important;
+    border-radius: 50% !important;
+
+    background: #d2d2cd !important;
+  }
+
+
+  .pf-dot.is-active {
+    background: #285b46 !important;
+  }
+
+
+  /* =========================
+     VIEW WORKS
+  ========================= */
+
+  .pf-view-btn {
+    width: 240px !important;
+    height: 58px !important;
+
+    margin: 38px auto 0 !important;
+
+    padding: 0 25px 0 30px !important;
+
+    /* PC版の見た目はそのまま */
+    background: transparent !important;
+
+    position: static !important;
+    transform: none !important;
+  }
+
+  .pf-view-btn > span:first-child {
+    font-size: 14px !important;
+  }
+
+  .pf-view-arrow {
+    width: 45px !important;
+  }
+
+  
+  /* =========================
+     SERVICE / SP
+  ========================= */
+
+  .service {
+    width: 100%;
+    padding: 70px 25px 90px;
+    box-sizing: border-box;
+  }
+
+  .service-inner {
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+  }
+
+
+  /* タイトル */
+  .service-heading {
+    width: 100% !important;
+    margin: 0 0 45px !important;
+  }
+
+  .service-heading h2 {
+    font-size: 30px !important;
+    line-height: 1.1 !important;
+    letter-spacing: 0.08em !important;
+  }
+
+  .service-heading p {
+    font-size: 14px !important;
+    margin-top: 14px !important;
+  }
+
+
+  /* ★ 1個ずつ縦並び */
+  .service-list {
+    width: 100% !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+
+    align-items: center !important;
+
+    gap: 55px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+
+  /* 各サービス */
+  .service-item {
+    width: 100% !important;
+    max-width: 330px !important;
+
+    margin: 0 auto !important;
+
+    flex: none !important;
+  }
+
+
+  /* 写真 */
+  .service-image {
+    width: 100% !important;
+    height: auto !important;
+     transform: translateY(-45px) !important;
+  }
+
+
+  
+
+  .service-image img {
+    width: 100% !important;
+    height: auto !important;
+
+    display: block;
+  }
+
+
+  /* タイトル */
+  .service-item h3 {
+    font-size: 22px !important;
+    margin: 22px 0 15px !important;
+    margin-top: -20px !important;
+  
+  }
+
+  .service-item h3::before,
+  .service-item h3::after {
+    display: none !important;
+    content: none !important;
+  }
+
+  .service-item h3 {
+    border: none !important;
+  }
+
+  /* 説明 */
+  .service-item p {
+    font-size: 14px !important;
+    line-height: 1.9 !important;
+
+    margin: 0 !important;
+    border: none !important;
+  }
+
+
+
+  /* =========================
+     CONTACT / SP
+  ========================= */
+
+  .contact {
+    width: 100% !important;
+    padding: 70px 25px 90px !important;
+    box-sizing: border-box !important;
+  }
+
+  .contact-inner {
+    width: 100% !important;
+    max-width: none !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+
+    gap: 45px !important;
+
+    transform: none !important;
+  }
+
+
+  /* =========================
+     タイトル＋文章
+  ========================= */
+
+  .contact-left {
+    width: 100% !important;
+    flex: none !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .contact-heading {
+    margin: 0 0 35px !important;
+  }
+
+  .contact-title-row {
+    display: block !important;
+  }
+
+  .contact-title-row h2 {
+    margin: 0 0 12px !important;
+
+    font-size: 30px !important;
+    line-height: 1.1 !important;
+    font-weight: 400 !important;
+
+    letter-spacing: 0.08em !important;
+  }
+
+  /* CONTACT横の線は消す */
+  .contact-title-row span {
+    display: none !important;
+  }
+
+  .contact-subtitle {
+    margin: 0 !important;
+
+    font-size: 18px !important;
+    line-height: 1.6 !important;
+  }
+
+
+  /* 説明文 */
+  .contact-description {
+    width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    font-size: 14px !important;
+    line-height: 2 !important;
+
+    letter-spacing: 0.05em !important;
+  }
+
+
+  /* =========================
+     フォーム
+  ========================= */
+
+  .contact-form-area {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+
+    flex: none !important;
+
+    margin: 0 !important;
+    padding: 30px 22px !important;
+
+    box-sizing: border-box !important;
+
+    border-radius: 28px !important;
+
+    /* PCで下にずらしていた分を解除 */
+    transform: none !important;
+  }
+
+  .contact-form {
+    width: 100% !important;
+  }
+
+
+  /* 各項目 */
+  .contact .form-group {
+    width: 100% !important;
+    margin: 0 0 22px !important;
+  }
+
+  .contact .form-group label {
+    margin: 0 0 8px !important;
+
+    font-size: 14px !important;
+  }
+
+  .contact .form-group input {
+    width: 100% !important;
+    height: 46px !important;
+
+    box-sizing: border-box !important;
+  }
+
+  .contact .form-group textarea {
+    width: 100% !important;
+    height: 130px !important;
+
+    box-sizing: border-box !important;
+  }
+
+
+  /* 送信ボタン */
+ .contact-submit {
+    width: 180px !important;
+    height: 46px !important;
+
+    margin: 25px auto 0 !important;
+    padding: 0 20px !important;
+
+    font-size: 13px !important;
+  }
+
+  /* 矢印も少し短く */
+  .contact-submit-arrow {
+    width: 45px !important;
+  }
+
+   .footer {
+    padding: 0 25px;
+    box-sizing: border-box;
+  }
+
+  .footer-copy {
+    width: 100%;
+    text-align: right;
+    font-size: 14px;
+  }
+
+  .pf-works {
+    min-height: auto;
+    height: auto;
+    padding-bottom: 100px;
+  }
+
+  .service {
+    margin-top: 0;
+    padding-top: 80px;
+  }
+
+}
+
+/* =========================
+   OPENING
+========================= */
+
+.opening {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #f8f7f2;
+
+  opacity: 1;
+  visibility: visible;
+
+  transition:
+    opacity 1.2s ease,
+    visibility 1.2s ease;
+}
+
+.opening__inner {
+  text-align: center;
+}
+
+.opening__logo {
+  margin: 0 0 25px;
+
+  font-family: "Times New Roman", serif;
+  font-size: 80px;
+  line-height: 1;
+
+  color: #34402f;
+
+  opacity: 0;
+  transform: translateY(15px);
+
+  animation: openingFade 1s ease forwards;
+}
+
+.opening__name {
+  margin: 0;
+
+  font-family: "Times New Roman", serif;
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+
+  color: #34402f;
+
+  opacity: 0;
+  transform: translateY(15px);
+
+  animation: openingFade 1s ease 0.5s forwards;
+}
+
+.opening__portfolio {
+  margin: 15px 0 0;
+
+  font-size: 12px;
+  letter-spacing: 0.35em;
+
+  color: #7c8373;
+
+  opacity: 0;
+
+  animation: openingFade 1s ease 1s forwards;
+}
+
+
+/* JSでこれが付いたらオープニング終了 */
+.opening.is-finished {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+
+@keyframes openingFade {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+
+
+
